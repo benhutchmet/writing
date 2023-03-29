@@ -1,0 +1,126 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+% for setting up figures
+\usepackage{subfigure}
+\usepackage{multirow}
+
+% package for margin spacing
+\usepackage[margin=1.5in,inner=1.5in]{geometry}
+\geometry{top=1.0in}
+
+% package for math stuff
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+
+\usepackage[style=science]{biblatex}
+\addbibresource{refs.bib}
+
+\title{Meeting 31st March}
+\author{Ben Hutchins}
+\date{2023}
+
+\begin{document}
+
+\maketitle
+
+\section*{Rossby waves}
+
+\subsection*{Introduction}
+
+Rossby waves are inertial waves which occur in rotating fluids due to the conservation of vorticity. In the atmosphere, these take the form of large-scale meanders in the high level winds which circle the poles. In the ocean they propogate along the thermocline and are caused by wind stress anomalies at the surface.
+
+\subsection*{Physical basis}
+
+Rossby waves occur in an inviscid, barotropic fluid of constant depth, such as the atmosphere.
+
+\begin{itemize}
+    \item Inviscid - viscous (frictional) forces are considered to be zero in the free atmosphere.
+    \item Barotropic - surfaces of constant pressure and constant density coincide ($\nabla \rho \times \nabla p = 0$). Pressure depends only on density. 
+\end{itemize}
+
+In this case, the divergence of the horizontal velocity is zero, given by:
+
+\begin{equation}
+    \nabla_h \cdot \mathbf{\vec{u}} = \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0
+    \label{eq:divergence}
+\end{equation}
+
+The vorticity of the fluid is given by the curl of the velocity:
+
+\begin{equation}
+    \nabla \times \mathbf{\vec{u_a}} = \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y} + f  = {\eta}
+    \label{eq:absolute_vorticity}
+\end{equation}
+
+The absolute vorticity is given by the curl of the absolute velocity ($\mathbf{\vec{u_a}}$), which is the air velocity relative to an inertial frame. For this we consider only the vertical component of the relative vorticity, $\zeta = \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y}$, and the vorticity of the earth, $f$ to give the absolute vorticity: $\eta = \zeta + f$.\\
+
+For the barotropic, non-divergent (equation \ref{eq:divergence}) fluid case, the absolute vorticity is conserved following the motion:
+
+\begin{equation}
+    \frac{D}{Dt}(\zeta + f) = 0
+    \label{eq:conservation_of_absolute_vorticity}
+\end{equation}
+
+% material derivative? having some issues with understanding this
+
+In the more general case, we consider a baroclinic atmosphere where density depends on both temperature and pressure, where the geostrophic wind varies with height. In this case, the Rossby wave is a potential vorticity-conserving motion which occurs due to gradients in potential vorticity. The potential vorticity is given by:
+
+\begin{equation}
+    \mathcal{Q} = \alpha (2 \mathbf{\Omega} + \nabla \times \mathbf{u}) \cdot \nabla \theta
+    \label{eq:potential_vorticity}
+\end{equation}
+
+Where $\mathbf{\Omega}$ is the angular velocity of the earth, $\alpha$ is the specific volume ($1/\rho$), $\mathbf{u}$ is the three dimensional vector velocity, and $\theta$ is the potential temperature ($\theta = T (p_0/p)^{\kappa}$). In the absence of friction and heating, the potential vorticity (ertel PV, $\mathcal{Q}$) is conserved following the motion of the fluid.\\
+
+\subsubsection*{Emergence of Rossby waves}
+
+For an idealized case, we consider a barotropic fluid with a constant density and depth, where variation in the coriolis parameter is given by:
+
+\begin{equation}
+    f = f_0 + \beta y
+    \label{eq:coriolis_parameter}
+\end{equation}
+
+Where:
+
+\begin{description}
+    \item[$f_0$] is the coriolis parameter at $\phi_0$, the latitude of the equator ($y=0$).
+    \item[$\beta \equiv (df/dy)_{\phi_0} = 2 \Omega \cos{\phi_0/a}$]  is the Rossby parameter which accounts for the the meridional variation of the Coriolis force caused by the spherical shape of the earth. Where $\Omega$ is the angular velocity of the earth, and $a$ is the radius of the earth.
+    \item[$y$] is the distance from the equator.
+\end{description}
+
+
+\subsection*{Relevance}
+
+
+\section*{Eddy mean flow}
+
+\subsection*{Introduction}
+
+
+\subsection*{Physical basis}
+
+
+\subsection*{Relevance}
+
+
+\section*{PhD update}
+
+% short term goals
+% longer term goals
+% deliverables - presentations/MC2
+% research ideas and questions
+
+
+
+% what is the mechanism for this in the oceans
+% gain momentum from wind stress at the ocean surface
+
+\printbibliography
+
+\end{document}
