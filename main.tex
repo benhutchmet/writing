@@ -99,24 +99,51 @@ This equation describes how the coriolis paramater varies linearly with latitude
 To understand the emergence of Rossby waves we can consider a chain of air parcels encircling a band of latitude. If we consider the absolute vorticity given by $\eta = \zeta + f$, where $\zeta$ is the relative vorticity ($\zeta = \partial v / \partial x - \partial u / \partial y$) and f is the Coriolis parameter. Initially, when t=0, $\zeta = 0$. At time t=1, a meridional displacement is applied to to the air parcels, $\delta y$, whereby the parcels are displaced from their original latitude. At time t=1:
 
 \begin{equation}
-    (\zeta + f)_{t=1} = f_{t=0}\\
-
-    $\text{using equation \ref{eq:coriolis_parameter}}$\\
-
-    \zeta_{t=1} = f_{t=0} - f_{t=1} = f_{t=0} - (f_{t=0} + \beta \delta y) = -\beta \delta y
-\label{eq:zeta}
+    (\zeta + f)_{t=1} = f_{t=0}
+    \label{eq:zeta}
 \end{equation}
 
+Using equation \ref{eq:coriolis_parameter}, we can write:
+
+\begin{equation}
+    \zeta_{t=1} = f_{t=0} - f_{t=1} = f_{t=0} - (f_{t=0} + \beta \delta y) = -\beta \delta y
+    \label{eq:zeta_rearanged}
+\end{equation}
 
 Where $\beta \equiv \partial f/ \partial y$ gives the planetary vorticity gradient.\\
 
 % why would this meridional displacement be sinusoidal?
 
-If this chain of air parcels is subjected to a sinusoidal displacement, with absolute vorticity connservation, the resulting perturbation to the absolute vorticity will be positive for a southern displacement ($\delta y < 0$) and negative for a northern displacement ($\delta y > 0$).\\
+If this chain of air parcels is subjected to a sinusoidal meridional displacement, with absolute vorticity connservation, the resulting perturbation to the absolute vorticity will be positive for a southern displacement ($\delta y < 0$) and negative for a northern displacement ($\delta y > 0$).\\
 
 % restoration gradient
 
-This perturbation to the vorticity will lead to a change in the meridional velocity field, which will advect
+This perturbation to the vorticity will lead to a change in the meridional velocity field, which will advect the chain of parcels southward to the west of the vorticity maxima and northward to the west of the vorticity minimum. This causes the air parcels to oscillate back and forth about the latitude band while the vorticity maxima and minima propogate to the west. This westward-propogating vorticity field is the Rossby wave. In a similar way to how vertical gradients of potential temperature resist vertical fluid displacements, the meridional gradient of absolute vorticity resists meridional fluid displacements and provides a restoring mechanism for Rossby waves.\\
+
+The speed of propogation, $c$, can be computed in the example by setting $\delta y = a \sin[k(x - ct)]$ and taking the total derivative $v = D(\delta y)/Dt = -kca \cos[k(x - ct)]$. Considering the x component of the relative vorticity in equation \ref{eq:zeta}, we can write:
+
+\begin{equation}
+    \zeta  = \frac{\partial v}{\partial x} = k^2 ca \cos[k(x - ct)]
+    \label{eq:zeta_x}
+\end{equation}
+
+By substituting $\delta y$ and $\zeta$ into equation \ref*{eq:zeta_rearanged} we can write:
+
+\begin{equation}
+    k^2 ca \cos[k(x - ct)] = -\beta a \sin[k(x - ct)]
+    \label{eq:zeta_x_substitution}
+\end{equation}
+
+Solving for $c$ we get:
+
+\begin{equation}
+    c = \frac{-\beta}{k^2}
+    \label{eq:zeta_x_substitution_c}
+\end{equation}
+
+Therefore, the phase speed, $c$, is westward relative to the mean flow and is inversely proportional to the square of the zonal wavenumber, $k$.\\
+
+
 
 \subsection*{Relevance}
 
